@@ -1,0 +1,23 @@
+.blog {
+  margin: 1rem auto;
+}
+
+.blog-posts {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  border-bottom: 2px solid #d7d6d5;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .blog-posts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .blog-posts {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

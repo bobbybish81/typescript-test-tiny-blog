@@ -1,0 +1,38 @@
+.post {
+  margin: 1rem;
+  border: 1px solid #e2c0a9;
+  border-radius: 10px;
+  padding: 3.5rem;
+  box-shadow: 0 7px 29px 0 #80808033;
+}
+
+.post h2 {
+  height: 7rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #e2c0a9;
+}
+
+.post-body {
+  margin: 1.5rem auto;
+}
+
+.post-reactions {
+  margin: 0.5rem auto;
+}
+
+.tags {
+  display: flex;
+  align-items: center;
+}
+
+.tags p {
+  margin-left: 0.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .post {
+    padding: 2rem;
+  }
+}

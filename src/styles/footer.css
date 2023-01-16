@@ -1,0 +1,27 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 3rem;
+  color: #000;
+  background-color: #e2c0a9;
+}
+
+.footer-text {
+  width: 40%;
+  font-size: 0.9rem;
+}
+
+.footer-text:nth-of-type(2) {
+  text-align: right;
+}
+
+.footer-img {
+  margin-top: 0.25rem;
+}
+
+.footer-link {
+  text-decoration: underline;
+  margin-left: 0.25rem;
+  color: #000;
+}
