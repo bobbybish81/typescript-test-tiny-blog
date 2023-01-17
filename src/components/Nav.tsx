@@ -1,16 +1,12 @@
 import React from 'react';
-import Blog from '../interfaces/blog';
 import '../styles/nav.css';
 
 interface NavProps {
-  blogs: Blog[],
-  categoryList: (blogs:Blog[]) => string[],
-  setFilter: (value:string) => void;
+  sections: string[],
+  setFilter: (value:string) => void,
 }
 
-const Nav = ({ blogs, categoryList, setFilter } : NavProps) => {
-
-  const sections = categoryList(blogs)
+const Nav = ({ sections, setFilter } : NavProps) => {
 
   return (
     <nav className='nav'>

@@ -10,12 +10,7 @@ const App = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [filter, setFilter] = useState<string>('ALL');
 
-  const categoryList = (blogs:Blog[]) => {
-    const tagArrays = blogs[0].posts.map(obj => obj.tags).map(tag => tag);
-    const allTags:string[] = [];
-    tagArrays.forEach(arr => arr.forEach(tag => allTags.push(tag)))
-    return allTags.filter((item, index) => allTags.indexOf(item) === index).sort();
-  }
+  const sections = ['american', 'crime', 'fiction', 'french', 'history'];
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,13 +27,12 @@ const App = () => {
         <h1>Welcome to Tiny Blog</h1>
       </header>
       <Nav
-        blogs={blogs}
-        categoryList={categoryList}
+        sections={sections}
         setFilter={setFilter}/>
       <main className='main'>
         <BlogPosts
           blogs={blogs}
-          categoryList={categoryList}
+          sections={sections}
           filter={filter}/>
       </main>
       <Footer/>

@@ -5,13 +5,11 @@ import '../styles/blogposts.css';
 
 interface SectionProps {
   blogs: Blog[],
-  categoryList: (blogs:Blog[]) => string[],
-  filter: string;
+  sections: string[],
+  filter: string,
 }
 
-const BlogPosts = ({ blogs, categoryList, filter } : SectionProps) => {
-
-  const sections = categoryList(blogs)
+const BlogPosts = ({ blogs, sections, filter } : SectionProps) => {
 
   return (
     <>
@@ -21,7 +19,7 @@ const BlogPosts = ({ blogs, categoryList, filter } : SectionProps) => {
           <section key={index} className='blog'>
             <h2>{section.toUpperCase()}</h2>
             <article className='blog-posts'>
-              {blogs[0].posts.map((post, index) => {
+              {blogs[0]?.posts.map((post, index) => {
                 if (post.tags[0] === section) {
                   return (
                     <Post
@@ -37,7 +35,7 @@ const BlogPosts = ({ blogs, categoryList, filter } : SectionProps) => {
         <section key={filter} className='blogs'>
           <h2>{filter.toUpperCase()}</h2>
           <article className='blog-posts'>
-            {blogs[0].posts.map((post, index) => {
+            {blogs[0]?.posts.map((post, index) => {
               if (post.tags[0] === filter.toLowerCase()) {
                 return (
                   <Post
