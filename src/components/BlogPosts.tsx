@@ -5,11 +5,13 @@ import '../styles/blogposts.css';
 
 interface SectionProps {
   blogs: Blog[],
-  sections: string[],
+  categoryList: (blogs:Blog[]) => string[],
   filter: string;
 }
 
-const BlogPosts = ({ blogs, sections, filter } : SectionProps) => {
+const BlogPosts = ({ blogs, categoryList, filter } : SectionProps) => {
+
+  const sections = categoryList(blogs)
 
   return (
     <>
