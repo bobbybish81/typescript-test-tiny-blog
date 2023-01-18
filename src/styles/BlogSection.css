@@ -14,10 +14,6 @@
   font-weight: 700;
 }
 
-.arrow-icon:active {
-  transform: rotate(180deg);
-}
-
 .blog-posts {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
