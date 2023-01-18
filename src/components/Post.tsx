@@ -9,15 +9,17 @@ interface ArticleProps {
 
 const Post = ({post, index}: ArticleProps) => {
   return (
-    <article className='post' key={index}>
-      <h2>{`${post.title}`}</h2>
-      <p className='post-body' >{post.body}</p>
-      <p
-        className='post-reactions'
-        style={{color: post.reactions === 0 ? 'red' : 'green'}}>
-        <b style={{color: '#000'}}>Reactions:</b>
-        {` ${post.reactions}`}
-      </p>
+    <article className='post-container' key={index}>
+      <div className='post'>
+        <h2>{`${post.title}`}</h2>
+        <p className='post-body' >{post.body}</p>
+        <p
+          className='post-reactions'
+          style={{color: post.reactions === 0 ? 'red' : 'green'}}>
+          <b style={{color: '#000'}}>Reactions:</b>
+          {` ${post.reactions}`}
+        </p>
+      </div>
       <div className='tags'>
         {post.tags.map((tag:string, index:number) => {
           return (

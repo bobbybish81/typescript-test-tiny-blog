@@ -31,7 +31,7 @@ const BlogSections = ({ blogs, section, index } : SectionProps) => {
             return (
               <Post
               index={index}
-              post={post}/> 
+              post={post}/>
             )
           } else return null;
         })}

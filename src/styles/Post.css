@@ -1,12 +1,12 @@
-.post {
+.post-container {
   margin: 1rem;
   border: 1px solid #e2c0a9;
   border-radius: 10px;
-  padding: 3.5rem;
   box-shadow: 0 7px 29px 0 #80808033;
+  display: grid;
 }
 
-.post h2 {
+.post-container h2 {
   height: 7rem;
   display: flex;
   align-items: center;
@@ -24,7 +24,8 @@
 
 .tags {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  justify-content: flex-start;
 }
 
 .tags p {
@@ -33,7 +34,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .post {
+  .post-container {
     padding: 2rem;
   }
 }
