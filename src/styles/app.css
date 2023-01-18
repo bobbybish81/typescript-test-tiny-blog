@@ -8,14 +8,3 @@
   background-color: #e2c0a9;
   letter-spacing: 0.25rem;
 }
-
-.main {
-  padding: 2rem 4rem;
-}
-
-@media screen and (min-width: 768px) {
-  .main {
-    padding: 1rem 2rem;
-  }
-}
-

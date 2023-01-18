@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import Nav from './components/Nav';
-import BlogPosts from './components/BlogPosts';
+import Main from './components/Main';
 import Footer from './components/Footer';
 import Blog from './interfaces/blog';
-import './styles/app.css';
+import './styles/App.css';
 
 const App = () => {
 
@@ -29,12 +29,10 @@ const App = () => {
       <Nav
         sections={sections}
         setFilter={setFilter}/>
-      <main className='main'>
-        <BlogPosts
-          blogs={blogs}
-          sections={sections}
-          filter={filter}/>
-      </main>
+      <Main
+        blogs={blogs}
+        sections={sections}
+        filter={filter}/>
       <Footer/>
     </>
 
