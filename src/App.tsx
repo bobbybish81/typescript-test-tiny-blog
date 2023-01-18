@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
-import Nav from './components/Nav';
+import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
 import Blog from './interfaces/blog';
-import './styles/App.css';
 
 const App = () => {
 
@@ -23,10 +22,7 @@ const App = () => {
 
   return (
     <>
-      <header className='header'>
-        <h1>Welcome to Tiny Blog</h1>
-      </header>
-      <Nav
+      <Header
         sections={sections}
         setFilter={setFilter}/>
       <Main
