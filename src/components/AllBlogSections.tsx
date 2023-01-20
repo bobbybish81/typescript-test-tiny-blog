@@ -1,21 +1,25 @@
 import { useState } from 'react';
 import { BsChevronUp } from 'react-icons/bs';
-import Blog from '../interfaces/blog';
+import { IPosts } from '../interfaces/IBlogs';
 import Post from './Post';
 import '../styles/BlogSection.css';
 
 interface SectionProps {
-  blogs: Blog[],
+  loading: boolean,
+  posts: IPosts[],
+  errorMessage: string,
   section: string,
   index: number,
 }
 
-const BlogSections = ({ blogs, section, index } : SectionProps) => {
+const AllBlogSections = ({ loading, posts, errorMessage, section, index } : SectionProps) => {
 
   const [displayBlog, setDisplayBlog] = useState<boolean>(true)
 
   return (
     <section key={index} className='blog'>
+      {errorMessage && (<p>{errorMessage}</p>)}
+      {loading && <h1>Loading... </h1>}
       <header className='blog-header'>
         <h2>{section.toUpperCase()}</h2>
         <BsChevronUp
@@ -26,7 +30,7 @@ const BlogSections = ({ blogs, section, index } : SectionProps) => {
       <article
         className='blog-posts'
         style={{height: displayBlog ? 'fit-content' : '0rem'}}>
-        {blogs[0]?.posts.map((post, index) => {
+        {posts.map((post, index) => {
           if (post.tags.includes(section)) {
             return (
               <Post
@@ -40,4 +44,4 @@ const BlogSections = ({ blogs, section, index } : SectionProps) => {
   )
 }
 
-export default BlogSections
+export default AllBlogSections

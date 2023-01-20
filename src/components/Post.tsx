@@ -1,9 +1,9 @@
 import React from 'react';
-import Posts from '../interfaces/posts';
+import { IPosts } from '../interfaces/IBlogs';
 import '../styles/Post.css';
 
 interface ArticleProps {
-  post: Posts,
+  post: IPosts,
   index: number,
 }
 

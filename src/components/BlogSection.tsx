@@ -1,21 +1,25 @@
-import Blog from '../interfaces/blog';
+import { IPosts } from '../interfaces/IBlogs';
 import Post from './Post';
 import '../styles/BlogSection.css';
 
 interface SectionProps {
-  blogs: Blog[],
+  loading: boolean,
+  posts: IPosts[],
+  errorMessage: string,
   filter: string,
 }
 
-const BlogSection = ({ blogs, filter } : SectionProps) => {
+const BlogSection = ({ loading, posts, errorMessage, filter } : SectionProps) => {
 
   return (
     <section key={filter} className='blogs'>
+      {errorMessage && (<p>{errorMessage}</p>)}
+      {loading && <h1>Loading... </h1>}
       <header className='blog-header'>
         <h2>{filter.toUpperCase()}</h2>
       </header>
       <article className='blog-posts'>
-        {blogs[0]?.posts.map((post, index) => {
+        {posts.map((post, index) => {
           if (post.tags.includes(filter.toLowerCase())) {
             return (
               <Post
